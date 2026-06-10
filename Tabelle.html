@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humusanteil Bodenproben</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Accordion Button (GRAU) */
+.accordion {
+    background-color: #6c757d;
+    color: white;
+    cursor: pointer;
+    padding: 14px 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.accordion:hover {
+    background-color: #5a6268;
+}
+
+.accordion::after {
+    content: "▼";
+    float: right;
+}
+
+.accordion.active::after {
+    content: "▲";
+}
+
+/* Panel */
+.panel {
+    display: none;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+/* Tabelle */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th {
+    background-color: #adb5bd;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f3f5;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+}
+</style>
+</head>
+
+<body>
+
+<button class="accordion">Bodenproben</button>
+
+<div class="panel">
+    <table>
+        <thead>
+            <tr>
+                <th>Kennnummer</th>
+                <th>Gewicht</th>
+                <th>Differenz (Humusanteil)</th>
+                <th>Ortsbeschreibung</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1.1</td><td>9.47</td><td>0.53</td><td>Grosse Obstplantage (Hühner)</td></tr>
+            <tr><td>1.2</td><td>9.66</td><td>0.34</td><td>Grosse Obstplantage (Hühner), tiefer</td></tr>
+            <tr><td>2.1</td><td>7.92</td><td>2.08</td><td>Hofwiese (Kühe)</td></tr>
+            <tr><td>2.2</td><td>9.54</td><td>0.46</td><td>Hofwiese (Kühe), tiefer</td></tr>
+            <tr><td>3.1</td><td>5.38</td><td>4.62</td><td>Ponywiese seit 13 Jahren nicht bearbeitet</td></tr>
+            <tr><td>3.2</td><td>9.75</td><td>0.25</td><td>Ponywiese seit 13 Jahren nicht bearbeitet</td></tr>
+            <tr><td>4.1</td><td>9.78</td><td>0.22</td><td>Weizenfeld konventionell</td></tr>
+            <tr><td>4.2</td><td>8.10</td><td>1.90</td><td>Weizenfeld konventionell</td></tr>
+            <tr><td>5.1</td><td>9.53</td><td>0.47</td><td>Salatfeld</td></tr>
+            <tr><td>5.2</td><td>9.50</td><td>0.50</td><td>Salatfeld</td></tr>
+            <tr><td>6.1</td><td>9.53</td><td>0.47</td><td>Gewächshaus</td></tr>
+            <tr><td>6.2</td><td>9.54</td><td>0.46</td><td>Gewächshaus</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+const accordion = document.querySelector(".accordion");
+const panel = document.querySelector(".panel");
+
+accordion.addEventListener("click", function () {
+    this.classList.toggle("active");
+
+    if (panel.style.display === "block") {
+        panel.style.display = "none";
+    } else {
+        panel.style.display = "block";
+    }
+});
+</script>
+
+</body>
+</html>
